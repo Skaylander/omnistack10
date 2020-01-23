@@ -9,6 +9,7 @@ import "./Main.css";
 import DevItem from "./components/DevItem";
 import DevForm from "./components/DevForm";
 
+
 // Componente: Bloco isolado de HTML, CSS e JS, o qual não interfere no restante da aplicação
 // Propriedade: Informações que um componente PAI passa para o componente FILHO
 // Estado: Informações mantidas pelo componente (Lembrar: imutabilidade)
@@ -31,10 +32,11 @@ function App() {
   }
 
   async function handleDelDev(dev) {
-    console.log(dev);
-    const response = await api.delete(`/devs/${dev._id}`);
+    await api.delete(`/devs/${dev._id}`);
 
-    console.log(devs);
+    setDevs(
+      devs.slice(0, devs.indexOf(dev)).concat(devs.slice(devs.indexOf(dev) + 1))
+    );
   }
 
   return (

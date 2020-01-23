@@ -11,6 +11,7 @@ module.exports = {
 
     const devs = await Dev.find({
       techs: {
+        //$regex?
         $in: techsArray
       },
       location: {

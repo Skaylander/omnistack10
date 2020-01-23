@@ -65,3 +65,11 @@ li.dev-item div.link a {
 li.dev-item div.link a:hover {
   color: #5a2ea6;
 }
+
+li.dev-item div.link span {
+  color: #8e4dff;
+}
+
+li.dev-item div.link span:hover {
+  color: #5a2ea6;
+}

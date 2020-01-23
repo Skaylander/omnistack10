@@ -1,10 +1,11 @@
 import React from "react";
 import "./styles.css";
 
+import UpdateForm from "./components/UpdateForm";
+
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
-import GitHubIcon from "@material-ui/icons/GitHub";
 
 function DevItem({ dev, onClick }) {
   // pega a propriedade dev
@@ -30,14 +31,16 @@ function DevItem({ dev, onClick }) {
         >
           Acessar perfil no Github
         </a>
-        <div className="dev-edit">
-          <IconButton>
+        {/* <div className="dev-edit"> */}
+        <span>
+          <IconButton onClick={handleUpdate}>
             <EditIcon fontSize="small" />
           </IconButton>
           <IconButton onClick={handleDelete}>
             <DeleteIcon fontSize="small" />
           </IconButton>
-        </div>
+        </span>
+        {/* </div> */}
       </div>
     </li>
   );
